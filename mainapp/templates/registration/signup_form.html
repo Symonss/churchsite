@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row" style="margin-left: 20%">
+    <div class="col-md-8 col-sm-10 col-12">
+        <h2>Testing {{ user_type }}s Module</h2>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
