@@ -24,5 +24,5 @@ class PastorSignUpView(CreateView):
         return redirect('pastors_home')
 
 def pastorHome(request):
-
-     return render(request,  'pastor/dashboard1.html', {})
+    staff = User.objects.all()
+    return render(request,  'pastor/dashboard1-staff.html', {'staff':staff})

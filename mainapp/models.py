@@ -20,7 +20,7 @@ class User(AbstractUser):
     
 class Group(models.Model):
     name = models.CharField(max_length = 100)
-    leader = models.OneToOneField(User, on_delete=models.CASCADE)
+    leader = models.OneToOneField(User, on_delete=models.CASCADE,related_name = 'my_group')
     def __str__(self):
         return self.name
 

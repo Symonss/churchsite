@@ -1,0 +1,180 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card-counter primary">
+                <i class="fa fa-code-fork"></i>
+                <span class="count-numbers">9</span>
+                <span class="count-name">Elders</span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card-counter danger">
+                <i class="fa fa-ticket"></i>
+                <span class="count-numbers">5</span>
+                <span class="count-name">Treasures</span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card-counter success">
+                <i class="fa fa-database"></i>
+                <span class="count-numbers">10</span>
+                <span class="count-name">Group Leaders</span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card-counter info">
+                <i class="fa fa-users"></i>
+                <span class="count-numbers">3</span>
+                <span class="count-name">Content Managers</span>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- rows for tabls -->
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- tables in the left -->
+            <!-- table 1 -->
+            <div class="contaner">
+                <h2>Elders</h2>
+
+                <table class="table table-bordered ">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in staff%}
+                        {% if user.is_elder%}
+                        <tr>
+                            <td>{{user.username}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>Edit | Delete | Message | View</td>
+                        </tr>
+                        {%endif%}
+                        {% endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- end of teble 1 -->
+            <div class="contaner">
+                <h3>Group Leaders</h3>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Group</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in staff%}
+                        {% if user.is_group_leader%}
+                        <tr>
+                            <td>{{user.full_name}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.my_group}}</td>
+                            <td>Edit | Delete | Message | View</td>
+                        </tr>
+                        {% endif%}
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- end of tables in the left part -->
+        </div>
+        <!-- right part -->
+        <div class="col-sm-6">
+            <!-- tables in the right -->
+            <!-- table 1 -->
+            <div class="container" ">
+                <h2>Treasury Department</h2>
+
+                <table class=" table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <!-- end of teble 1 -->
+            <div class="container">
+                <h3>Content Managers</h3>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>Dooley</td>
+                            <td>july@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- end of tables in the right part -->
+        </div>
+        <!-- end of right part -->
+    </div>
+</div>
+<!-- end of rows for tables -->
+
+{% endblock %}
