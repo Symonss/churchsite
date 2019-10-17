@@ -499,12 +499,12 @@ body {
   }
 
   .card-counter.primary{
-    background-color: #007bff;
+    background-color: #66a5e9;
     color: #FFF;
   }
 
   .card-counter.danger{
-    background-color: #ef5350;
+    background-color: #ce8786;
     color: #FFF;
   }  
 
@@ -514,7 +514,7 @@ body {
   }  
 
   .card-counter.info{
-    background-color: #26c6da;
+    background-color: #43b0be;
     color: #FFF;
   }  
 
@@ -542,3 +542,4 @@ body {
     font-size: 28px;
   }
 /* End of info cards */
+
