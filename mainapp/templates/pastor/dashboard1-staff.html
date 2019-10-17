@@ -1,12 +1,12 @@
 {% extends 'mainapp/base.html' %}
-
+{% load static%}
 {% block content %}
 
 <div class="container">
     <div class="row">
         <div class="col-md-3">
             <div class="card-counter primary">
-                <i class="fa fa-code-fork"></i>
+                <img src="{% static 'images/users.png'%}" alt="">
                 <span class="count-numbers">9</span>
                 <span class="count-name">Elders</span>
             </div>
@@ -14,7 +14,7 @@
 
         <div class="col-md-3">
             <div class="card-counter danger">
-                <i class="fa fa-ticket"></i>
+                <img src="{% static 'images/banker.png'%}" alt="">
                 <span class="count-numbers">5</span>
                 <span class="count-name">Treasures</span>
             </div>
@@ -22,7 +22,7 @@
 
         <div class="col-md-3">
             <div class="card-counter success">
-                <i class="fa fa-database"></i>
+                <img src="{% static 'images/priest.png'%}" alt="">
                 <span class="count-numbers">10</span>
                 <span class="count-name">Group Leaders</span>
             </div>
@@ -30,7 +30,7 @@
 
         <div class="col-md-3">
             <div class="card-counter info">
-                <i class="fa fa-users"></i>
+                <img src="{% static 'images/administrator.png'%}" alt="">
                 <span class="count-numbers">3</span>
                 <span class="count-name">Content Managers</span>
             </div>
